@@ -9,7 +9,7 @@ template_imagebuilder_base="
 # WARNING: This is an automatically generated Dockerfile. DO NOT EDIT. #
 ########################################################################
 
-FROM wlanslovenija/firmware-base
+FROM bvujnovac/firmware-base
 
 RUN mkdir -p /buildsystem/build && \\\\
  chown -R builder:builder /buildsystem/build && \\\\
@@ -18,8 +18,8 @@ RUN mkdir -p /buildsystem/build && \\\\
  mkdir -p /builder/imagebuilder && \\\\
  cp -r imagebuilder/. /builder/imagebuilder && \\\\
  rm -rf imagebuilder && \\\\
- mkdir -p /builder/packages/ && \\\\ 
- echo -n \\\"{\\\\\\\"platform\\\\\\\": \\\\\\\"lede\\\\\\\", \\\" > /builder/packages/metadata && \\\\
+ mkdir -p /builder/packages/ && \\\\
+ echo -n \\\"{\\\\\\\"platform\\\\\\\": \\\\\\\"openwrt\\\\\\\", \\\" > /builder/packages/metadata && \\\\
  echo -n \\\"\\\\\\\"architecture\\\\\\\": \\\\\\\"\${openwrt_target}_\${openwrt_subtarget}\\\\\\\", \\\" >> /builder/packages/metadata && \\\\
  echo -n \\\"\\\\\\\"version\\\\\\\": \\\\\\\"\${openwrt_version}\\\\\\\", \\\" >> /builder/packages/metadata && \\\\
  echo -n \\\"\\\\\\\"packages\\\\\\\": \\\" >> /builder/packages/metadata && \\\\
